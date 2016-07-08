@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>文字下划线、顶划线、删除线</title>
+<style>
+@keyframes blink {
+	50% {
+		color: transparent;
+	}
+}
+p.one{ text-decoration:underline;
+		animation: 1s blink 3 steps(1);
+	} /*下划线*/
+@keyframes blink-smooth {
+	to {
+		color: transparent;
+	}
+}
+p.two{ text-decoration:overline;
+	animation: .5s blink-smooth 6 alternate;} /*顶划线*/
+@keyframes blink-smooth {
+	50% {
+		color: transparent;
+	}
+}
+p.three{ text-decoration:line-through;
+		animation: 1s blink-smooth 3;
+	} /*删除线*/
+p.four{ text-decoration:blink;} /*文字闪烁*/
+</style>
+</head>
+<body>
+<p class="one">下划线文字、下划线文字</p>
+<p class="two">顶划线文字、顶划线文字 </p>
+<p class="three">删除线文字、删除线文字</p>
+<p class="four">文字闪烁</p>
+<p>正常文字对比</p>
+</body>
+</html>
