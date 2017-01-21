@@ -1,0 +1,83 @@
+html,body,ul,li {
+	padding: 0;
+	margin: 0;
+}
+#nav {
+	width: 1000px;
+	height: 35px;
+	background-color: #ccc;
+	position: relative;
+	list-style-type: none;
+	margin: 100px auto;
+}
+li {
+	float: left;
+	width: 100px;
+	height: 33px;
+	line-height: 33px;
+	text-align: center;
+}
+#nav .cur {
+	position: absolute;
+	width: 100px;
+	height: 5px;
+	background-color: red;
+	bottom: 0;
+	left: 0;
+}
+#nav li:hover {
+	background-color: green;
+	color: #777;
+}
+.notice {
+	width: 298px;
+	height: 98px;
+	margin: 10px;
+	border: 1px solid #eee;
+	overflow: hidden;
+}
+.notice-tit {
+	position: relative;
+	height: 27px;
+	background-color: #f7f7f7;
+}
+.notice-tit ul {
+	position: absolute;
+	width: 301px;
+	left: -1px;
+}
+.notice-tit ul li {
+	float: left;
+	width: 58px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	overflow: hidden;
+	padding: 0 1px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #eee;
+}
+.notice-tit li.select {
+	background-color:#fff;
+	border-bottom-color: #fff;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 0 ;
+	font-weight: bolder;
+}
+.notice li a:link,.notice li a:visited {
+	text-decoration: none;
+	color: #111;
+}
+.notice li a:hover {
+	color: #f90;
+}
+.notice-con .mod {
+	margin: 10px 5px;
+}
+.notice-con .mod ul li {
+	float: left;
+	width: 144px;
+	height: 25px;
+	overflow: hidden;
+}

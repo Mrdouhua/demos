@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大风车</title>
+<style>
+    /*wheel-sm*/
+
+    .wheel-sm{
+        display: block;
+        width: 228px;
+        height: 212px;
+    }
+    .panel-sm{
+        height: 163px;
+        width: 163px;
+        margin: 0 0 0 12px;
+        background-image: url("http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025fl2bajl4lgzxlfdd.png");
+    }
+    .wheel-sm .transition{
+        margin: 10px;
+    }
+    .pointer-sm{
+        width: 110px;
+        position: relative;
+        top: -100px;
+        left: 35px;
+    }
+    .car{
+        height: 163px;
+        width: 163px;
+        padding-top: 2px;
+    }
+    .car img{
+        position: absolute;
+    }
+    .c1{
+        left: 64px;
+        top: -10px;
+    }
+    .c2{
+        top: 10px;
+        left: 122px;
+    }
+    .c3{
+        top: 65px;
+        left: 145px;
+    }
+    .c4{
+        top: 120px;
+        left: 122px;
+    }
+    .c5{
+        top: 142px;
+        left: 64px;
+    }
+    .c6{
+        top: 120px;
+        left: 8px;
+    }
+    .c7{
+        top: 65px;
+        left: -10px;
+    }
+    .c8{
+        top: 10px;
+        left: 10px;
+    }
+
+    .panel-sm{
+        animation:panel 5s linear 1s infinite;
+    }
+    .car img{
+        animation:car 5s linear 1s infinite;
+    }
+    @keyframes panel{
+        0%     {transform:rotate(0deg);}
+        100%   {transform:rotate(360deg);}
+    }
+    @keyframes car{
+        0%     {transform:rotate(0deg);}
+        100%   {transform:rotate(-360deg);}
+    }
+
+</style>
+</head>
+<body>
+    <div class="wheel-sm">
+        <div class="panel-sm car">
+            <img class="c1" src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025e5956wud4d6luv4x.png">
+            <img class="c2" src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025bausss4sw8wnvcsj.png">
+            <img class="c3" src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025e5956wud4d6luv4x.png">
+            <img class="c4" src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025bausss4sw8wnvcsj.png">
+            <img class="c5" src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025e5956wud4d6luv4x.png">
+            <img class="c6" src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025bausss4sw8wnvcsj.png">
+            <img class="c7" src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025e5956wud4d6luv4x.png">
+            <img class="c8" src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173025bausss4sw8wnvcsj.png">
+        </div>
+           <div class="pointer-sm">
+            <img src="http://cdn.attach.w3cfuns.com/notes/pics/201605/09/173003t6ginnn6n5tc7t5i.png">
+           </div>
+    </div>
+</body>
+</html>

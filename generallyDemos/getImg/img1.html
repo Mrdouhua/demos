@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="file" id="insertImg">
+	<script type="text/javascript">
+		var oInsertImg = document.getElementById('insertImg');
+
+		var imgUrl = window.URL.createObjectURL(oInsertImg.files[0]);
+		console.log(imgUrl);
+	</script>
+</body>
+</html>

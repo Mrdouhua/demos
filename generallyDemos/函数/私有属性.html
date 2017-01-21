@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+function Blog(){
+    this.title = 'blue sky';
+}
+
+var bar = new Blog();
+bar.title      // 'blue sky'
+
+var foo = Blog;
+foo.title = 'green sky'    // 试图改写title属性
+foo.title   //   'green sky'    
+bar.title   //   'blue sky'    依旧是原来的值	
+</script>	
+</body>
+</html>

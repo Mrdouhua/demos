@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>tab内容模块左右移动功能</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ui,
+			li {
+				list-style: none;
+			}
+			
+			#list {
+				overflow: hidden;
+				margin: 30px 50px 0 50px;
+			}
+			
+			#list li {
+				float: left;
+				width: 160px;
+				height: 36px;
+				border: #ddd 1px solid;
+				line-height: 36px;
+				text-align: center;
+			}
+			
+			#list li.cur_li {
+				background-color: #999;
+				color: #fff;
+			}
+			
+			.showbox {
+				width: 482px;
+				height: 300px;
+				overflow: hidden;
+				border: #ddd 1px solid;
+				margin-left: 50px;
+				border-top: none;
+				position: relative;
+			}
+			
+			#box_ul {
+				overflow: hidden;
+				width: 1446px;
+			}
+			
+			#box_ul li {
+				width: 482px;
+				height: 300px;
+				float: left;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				show();
+			}
+
+			function show() {
+				var oList = document.getElementById("list");
+				var aLi = oList.getElementsByTagName("li");
+				var oUl = document.getElementById("box_ul");
+				oUl.style.position = "absolute";
+				oUl.style.top = "0";
+				oUl.style.left = "0";
+				aLi[0].onmouseover = function() {
+					for(var i=0; i<aLi.length; i++){
+						aLi[i].className = "";	
+					}					
+					this.className = "cur_li";
+					oneMoveElement("box_ul", 0, 0, 10);
+				}
+				aLi[1].onmouseover = function() {
+					for(var i=0; i<aLi.length; i++){
+						aLi[i].className = "";	
+					}					
+					this.className = "cur_li";
+					oneMoveElement("box_ul", -482, 0, 10);
+				}
+				aLi[2].onmouseover = function() {
+					for(var i=0; i<aLi.length; i++){
+						aLi[i].className = "";	
+					}					
+					this.className = "cur_li";
+					oneMoveElement("box_ul", -964, 0, 10);
+				}
+			}
+
+			function oneMoveElement(id, final_x, final_y, interval) {
+				var elem = document.getElementById(id);
+				var xPos = parseInt(elem.style.left);
+				var yPos = parseInt(elem.style.top);
+				var dist = 0;
+				if (elem.movement) {
+					clearTimeout(elem.movement)
+				}
+				if (xPos < final_x) {
+					dist = Math.ceil((final_x - xPos) / 10)
+					xPos += dist;
+				}
+				if (xPos > final_x) {
+					dist = Math.ceil((xPos - final_x) / 10)
+					xPos -= dist;
+				}
+				if (yPos < final_y) {
+					dist = Math.ceil((final_y - yPos) / 10)
+					yPos += dist;
+				}
+				if (yPos > final_y) {
+					dist = Math.ceil((yPos - final_y) / 10)
+					yPos -= dist;
+				}
+				elem.style.top = yPos + "px";
+				elem.style.left = xPos + "px";
+				var repert = "oneMoveElement('" + id + "'," + final_x + "," + final_y + "," + interval + ")"
+				elem.movement = setTimeout(repert, interval)
+			}
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li class="cur_li">列表一</li>
+			<li style="border-left: none;border-right: none;">列表二</li>
+			<li>列表三</li>
+		</ul>
+		<div class="showbox">
+			<ul id="box_ul">
+				<li style="background-color: red;">123</li>
+				<li style="background-color: royalblue;">456</li>
+				<li style="background-color: burlywood;">789</li>
+			</ul>
+		</div>
+	</body>
+</html>

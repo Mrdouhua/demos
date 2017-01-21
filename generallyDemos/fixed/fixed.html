@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body,html {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			height: 3000px;
+		}
+		.fixed {
+			width: 220px;
+			height: 220px;
+			position: relative;
+			top: 700px;
+			left: 300px;
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="fixed"></div>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+	/*
+	 *如果页面(body)的滚动量大于div的offsetTop(上偏移量)，则把div设置为display:fixed
+	 *反之设置回display:relative
+	 *监听事件写在window上
+	*/
+
+	$(function(){
+		// 监听页面滚动事件
+		$(window).scroll(function(){
+			isFixed();
+		})
+	})
+	// 取出需要设置为fixed的div
+	var oFixed = $('.fixed'),
+		body = $('body'),
+		oTop = oFixed.offset().top;
+
+	// 判断页面的滚动量是否大于div的offsetTop的函数
+	function isFixed(){
+		
+		if(body.scrollTop() > oTop){
+			// 如果body的滚动量大于oFixed.offsetTop(700),则设置为fixed
+			$(oFixed).css({"position":"fixed","top":0});
+		} else{
+			// 如果body的滚动量小于oFixed.offsetTop(700),则设置为relative
+			$(oFixed).css({"position":"relative","top":"700px"});
+		}
+	}
+	</script>
+</body>
+</html>

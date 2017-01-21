@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function SuperType(name) {
+			this.name = name || "john";
+		}
+
+		SuperType.prototype.sayName = function() {
+			return this.name;
+		};
+
+		function SubType(name,age) {
+		}
+
+		// 继承方法
+		function inherit(C,P) {
+			C.prototype = new P();
+		}
+
+		inherit(SubType,SuperType);
+
+		var instance1 = new SubType("mo");
+		console.log(instance1.sayName()); // john
+	</script>
+</body>
+</html>

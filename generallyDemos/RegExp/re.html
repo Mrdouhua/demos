@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<label for="">密码</label>
+		<input id="test" type="text" name="text">
+	</form>
+	<script type="text/javascript">
+		//var oText = document.getElementsByTagName('input')[0].value;
+		var oText = "";
+		var re = /\S+$/;
+		var oT = document.getElementById('test');
+		
+		oT.onblur = function(){
+			// var oTo = document.getElementById('test').value;
+			var oText = document.getElementsByTagName('input')[0].value;
+			if(!re.test(oText)){
+				console.log("right");
+			} else{
+				console.log("error");
+			}	
+		}
+		
+	</script>
+</body>
+</html>

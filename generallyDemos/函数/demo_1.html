@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function obj(name) {
+		// console.log(new.target);
+		if(new.target !== undefined) {
+			// new 调用
+			if(name !== undefined) {
+				this.name = name;
+			}
+		} else {
+			// 非new调用
+			return {
+				name: name
+			}
+		}
+	}
+	obj.prototype.name = "name2";
+	var a = obj("name1");
+	var b = new obj; // 浏览器会自动补齐()
+
+	console.log("a+",a.name);
+	console.log("b+",b.name);
+</script>	
+</body>
+</html>

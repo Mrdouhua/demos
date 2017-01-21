@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>namespaces2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var MY = MY || {};
+		MY.namespace = function (ns_string) {
+			var parts = ns_string.split('.'),
+				parent = MY,
+				i;
+			// 剥离最前面的冗余全局变量
+			if (parts[0] === "MY") {
+				parts = parts.slice(1);
+			}
+			console.log(parts);
+
+			for (var i = 0; i < parts.length; i++) {
+				// 如果它不存在，就创建一个属性
+				// console.log(i,typeof parent[parts[i]]);
+				if (typeof parent[parts[i]] === "undefined") {
+					parent[parts[i]] = {};
+				}
+				parent = parent[parts[i]];
+				console.log(i,parent);
+			}
+			return parent;
+			// console.log(parent.length);
+		};
+
+		MY.namespace('MY.modules.modules2');
+
+		// MY.modules2 = (function () {
+		// 	console.log("modules2");
+		// })();
+	</script>
+</body>
+</html>

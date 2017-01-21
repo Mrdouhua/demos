@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标右键行为</title>
+	<style>
+        #ff {
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: orange;
+            border: 1px solid #111;
+        }
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        #myMenu{
+            list-style: none;
+            width: 150px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            position: absolute;
+            /*display: none;*/
+            visibility: hidden;
+        }
+
+        #myMenu li{
+            border-bottom: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #myMenu li:hover{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body >
+	<div id="ff">dfdfdfdfdfdfdfdfdfdfdfdf</div>
+<ul id="myMenu">
+    <li>右键想干什么？</li>
+    <li>想看源代码？</li>
+    <li>还是想审查元素？</li>
+</ul>
+<script type="text/javascript">
+var EventUtil = {
+    addHandler: function(element, type, handler){
+        if (element.addEventListener){
+            element.addEventListener(type, handler, false);
+        } else if (element.attachEvent){
+            element.attachEvent("on" + type, handler);
+        } else {
+            element["on" + type] = handler;
+        }
+    },
+
+    getEvent: function(event){
+        return event ? event : window.event;
+    },
+
+    preventDefault: function(event){
+        if(event.preventDefault){
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    }
+};
+
+EventUtil.addHandler(window, "load", function(event){
+    var div = document.getElementById("ff");
+
+    EventUtil.addHandler(div, "contextmenu", function(event){
+        event = EventUtil.getEvent(event);
+        EventUtil.preventDefault(event);
+
+        var myMenu = document.getElementById("myMenu");
+        myMenu.style.visibility = "visible";
+        //获取鼠标视口位置
+        myMenu.style.top = event.clientY + "px";
+        myMenu.style.left = event.clientX + "px";
+    });
+
+    EventUtil.addHandler(document, "click", function(event){
+        myMenu.style.visibility = "hidden";
+    })
+})
+</script>
+</body>
+</html>

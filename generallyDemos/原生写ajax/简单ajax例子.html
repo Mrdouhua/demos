@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+  window.onload = function(){
+    var selProvince =  document.getElementById("selProvince");
+    var city =  document.getElementById("city");
+    selProvince.onchange = function(){
+        //第一步：新建对象 new  
+          var xhr = null;
+           if( window.ActiveXObject){
+                    // 以Microsoft IE的方式创建     xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                   xhr =  new ActiveXObject("Microsoft.XMLHTTP");
+          }else{
+                  xhr = new XMLHttpRequest();
+           }
+        //第二步：对象的open()
+            xhr.open("post","http://rap.taobao.org/mockjsdata/10097/pageNum",true);
+            //POST方式需要自己设置http的请求头
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");      
+      //第三步： 发送数据， post方式发送数据
+            xhr.send(null);
+
+            var dataType = "json";
+      // 第四步
+            xhr.onreadystatechange = function(){
+                    if ((xhr.readyState == 4) && (xhr.status == 200)) {
+                        if (dataType=="text" || dataType=="TEXT"){
+                            if (console.log != null){
+                                console.log(xhr.responseText); // 普通文本
+                            }
+                        } else if(dataType=="xml" || dataType=="XML"){
+                            if (console.log != null){
+                                console.log(xhr.responseXML); // 接收xml文档
+                            }
+                        } else if (dataType=="json" || dataType=="JSON"){
+                            if (true) {
+                              var data = JSON.parse(xhr.responseText);
+                              console.log(data);
+                                // console.log(eval("("+xhr.responseText+")")["data"]); //将json字符串转换为js对象
+                            }
+                        }
+                    }
+                };
+           }
+ };
+</script>
+<select name="selProvince" id="selProvince">
+    <option value="吉林省">1吉林省</option>
+    <option value="辽宁省">辽宁省2</option>
+    <option value="山东省">山东省3</option>
+</select>
+<select name="city" id="city">
+</select>
+</body>
+</html>

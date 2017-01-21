@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function SuperType() {
+		this.colors = ["red","blank","orange"];
+		this.name = "moxiaobing";
+	}
+	SuperType.prototype.age = 19;
+	SuperType.prototype.getName = function () {
+		return this.name;
+	}
+	function SubType() {
+
+	}
+	SubType.prototype = new SuperType();
+
+	var ins1 = new SubType();
+	ins1.colors.push("yellow");
+	console.log(ins1.colors,ins1.age,ins1.name,ins1.getName());
+
+	var ins2 = new SubType();
+	ins2.colors.push("yellow");
+	console.log(ins2.colors);
+</script>	
+</body>
+</html>

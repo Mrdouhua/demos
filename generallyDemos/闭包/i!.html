@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function a(){
+			var arr = [];
+			for(var i = 0;i < 5;i++){
+				arr[i] = i;
+				console.log(arr[i],"这是第"+i+"次");
+			}
+			console.log(arr[1],"out");
+			// arr[2]();
+			return arr;
+		}
+		var b = a();
+		// console.log(b[2]());
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			float: left;
+			width: 100px;
+			height: 30px;
+			background-color: #888;
+			margin-left: 1px;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script type="text/javascript">
+	window.onload = function(){
+		(function(){
+			var oUl = document.getElementsByTagName('ul'),
+				oLi = document.getElementsByTagName('li');
+
+			for(var i = 0; i < 5; i++){
+				(function(index){
+					oLi[index].onclick = function(){
+						console.log(index);
+					}
+				})(i);
+			}
+		})();
+	}
+		
+	</script>
+</body>
+</html>

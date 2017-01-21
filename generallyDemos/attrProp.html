@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<input type="checkbox" id="ck1" checked="checked" />选好<br>
+	<input type="checkbox" id="ck2" />钻中
+	<script type="text/javascript">
+		$('#ck1').prop("checked") == false;
+		// $('#ck2').attr("checked",true);
+		console.log($('#ck1').prop("checked"));
+		console.log($('#ck2').prop("checked"));
+		console.log($('#ck1').attr("checked"));
+		console.log($('#ck2').attr("checked"));
+	</script>
+</body>
+</html>

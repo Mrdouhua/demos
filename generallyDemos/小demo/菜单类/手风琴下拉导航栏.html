@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery动画垂直折叠导航效果</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .menu_list{
+            width:600px;
+        }
+        .menu_head{
+            width:600px;
+            border:1px #ccc solid;
+            height:60px;
+            background: #f1f1f1 url("images/pro_left.png") center right no-repeat;
+            text-align: center;
+            color:#666;
+            line-height:60px;
+            font-weight:normal;
+        }
+        .menu_body a{
+            text-decoration: none;
+            color: #666666;
+            display: block;
+            width:600px;
+            height:50px;
+            text-align: center;
+            line-height:50px;
+            border:1px #ccc solid;
+        }
+        .menu_list .current{
+            background: #f1f1f1 url("images/pro_down.png") center right no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div id="firstpane" class="menu_list">
+    <h3 class="menu_head">哲学</h3>
+    <div class="menu_body" style="display: none;">
+        <a href="#">科学技术哲学</a>
+        <a href="#">宗教学</a>
+        <a href="#">美学</a>
+        <a href="#">伦理学</a>
+        <a href="#">逻辑学</a>
+        <a href="#">外国哲学</a>
+        <a href="#">中国哲学</a>
+        <a href="#">马克思主义哲学</a>
+    </div>
+    <h3 class="menu_head">哲学2</h3>
+    <div class="menu_body" style="display: none;">
+        <a href="#">科学技术哲学</a>
+        <a href="#">宗教学</a>
+        <a href="#">美学</a>
+        <a href="#">伦理学</a>
+        <a href="#">逻辑学</a>
+        <a href="#">外国哲学</a>
+        <a href="#">中国哲学</a>
+        <a href="#">马克思主义哲学</a>
+    </div>
+    <h3 class="menu_head">哲学3</h3>
+    <div class="menu_body" style="display: none;">
+        <a href="#">科学技术哲学</a>
+        <a href="#">宗教学</a>
+        <a href="#">美学</a>
+        <a href="#">伦理学</a>
+        <a href="#">逻辑学</a>
+        <a href="#">外国哲学</a>
+        <a href="#">中国哲学</a>
+        <a href="#">马克思主义哲学</a>
+    </div>
+</div>
+<script>
+$(document).ready(function(){
+    $('h3.menu_head').click(function(){
+        if($(this).next('div.menu_body').css('display')=='none')
+        {
+            $(this).addClass('current')
+        }else
+        {
+            $(this).removeClass('current')
+        }
+        $(this).next('div.menu_body').slideToggle(300).siblings('div.menu_body').slideUp("slow");
+        $(this).siblings().removeClass("current");
+
+    })
+})
+</script>
+<!--<script>
+$(document).ready(function(){
+    $('.menu_head').click(function(){
+        $(this).addClass("current").next('div.menu_body').slideToggle(300).siblings('div.menu_body').slideUp("slow");
+        $(this).siblings().removeClass("current");
+    });
+})
+</script>-->
+</body>
+</html>

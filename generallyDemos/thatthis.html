@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var name = "clever coder";  
+		var person = {  
+		    name : "foocoder",  
+		    hello : function(sth){  
+		        var sayhello = function(sth) {  
+		            console.log(this.name + " says " + sth);  
+		        };  
+		        sayhello(sth);  
+		    }  
+		}  
+		person.hello("hello world");
+		var name = "clever coder";  
+		var person = {  
+		    name : "foocoder",  
+		    hello : function(sth){  
+		        var that = this;  
+		        var sayhello = function(sth) {  
+		            console.log(that.name + " says " + sth);  
+		        };  
+		        sayhello(sth);  
+		    }  
+		}  
+		person.hello("hello world");
+	</script>
+</body>
+</html>

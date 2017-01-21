@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.show {
+			margin: 0;
+			padding: 0;
+			width: 100px;
+			height: 100px;
+			border: 1px solid #111;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<button id="btn">获取</button>
+		<p class="show"></p>
+	</div>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$("#btn").click( ()=>{
+			$.ajax({
+				type: "get",
+				url: "http://rap.taobao.org/mockjsdata/9989/initPage",
+				dataType: "jsonp",
+				jsonp: "callback",
+				success: (json) => {
+					let oJson = json.data;
+					let str = '';
+					oJson.map( (item)=>{
+						str += item.title1;
+					})
+					$(".show").html(str);
+				}
+			})
+		})
+	</script>
+</body>
+</html>

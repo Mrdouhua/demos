@@ -1,0 +1,123 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+#banner {
+	width: 1000px;
+	height: 460px;
+	margin: auto;
+	margin-top: 10px;
+	position: relative;
+	z-index: 1;
+	background-color: #0ca5e9;
+}
+.banner-carousel {
+	width: 1000px;
+	height: 460px;
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+	z-index: 1;
+}
+.banner-carousel ul {
+	width: 99999px;
+	height: 460px;
+}
+.banner-carousel ul li {
+	float: left;
+	list-style: none;
+	width: 1000px;
+	height: 460px;
+}
+.banner-carousel ul li img {
+	width: 100%;
+	height: 100%;
+}
+.banner-s {
+	width: 175px;
+	height: 425px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
+}
+.banner-s ul {
+	background-color: rgba(70,57,50,.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000,endColorstr=#4c000000);
+}
+.banner-s ul li {
+	list-style: none;
+	width: 165px;
+	height: 103px;
+	padding: 5px 5px 0 5px;
+	cursor: pointer;
+}
+li.bgc {
+	background-color: rgba(255,255,255,.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c8ffffff,endColorstr=#c8ffffff);
+}
+.banner-info {
+	width: 1000px;
+	height: 35px;
+	background-color: rgba(25,23,33,.7);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c8000000,endColorstr=#c8000000);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	text-align: center;
+	line-height: 35px;
+	color: #fff;
+	font-size: 14px;
+}
+.banner-button {
+	width: 175px;
+	height: 35px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 3;
+	text-align: center;
+	line-height: 35px;
+}
+.banner-button ul {
+	width: 110px;
+	height: 35px;
+	margin: auto;
+
+}
+.banner-button li {
+	width: 20px;
+	height: 5px;
+	background-color: #a0a0a0;
+	list-style: none;
+	float: left;
+	margin: -2px 2px;
+	position: relative;
+	top: 50%;
+}
+li.banner-act {
+	background-color: #fff;
+}
+.prev,.next {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: rgba(0,0,0,.3);
+	color: #111;
+	text-align: center;
+	line-height: 50px;
+	z-index: 50;
+	font-size: 50px;
+	cursor: pointer;
+}
+.prev {
+	left: 0;
+	top: 50%;
+	margin-top: -25px;
+}
+.next {
+	right: 175px;
+	top: 50%;
+	margin-top: -25px;
+}

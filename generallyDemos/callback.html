@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var myapp = {
+		// var that = this;
+		color: "blue",
+		getColor: function(node) {
+			return this.color;
+		}
+	};
+	function findNodes(callback){
+		var i = 10000,
+			nodes = [],
+			found;
+
+		if (typeof callback === "function") {
+			callback(found);
+		}
+
+		while (i) {
+			i -= 1;
+
+			if (callback) {
+				callback(found);
+			}
+			nodes.push(found);
+		}
+		return nodes;
+	};
+	console.log(findNodes(myapp.getColor));
+</script>	
+</body>
+</html>

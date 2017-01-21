@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>css2选择器里面发现了这个选择器element+element，作用是，可以定义父元素中除了第一个子元素之外所有的子元素</title> 
+	<style type="text/css">
+	li{
+		width: 100px;
+		height: 100px;
+		background-color: #ccc;
+		list-style-type: none;
+		float: left;
+	}
+	li+li{
+		margin-left: 20px;
+	}
+	</style>
+</head> 
+<body> 
+    <ul>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    </ul>
+</body> 
+</html>

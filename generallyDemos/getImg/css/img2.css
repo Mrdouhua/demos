@@ -1,0 +1,13 @@
+body,html,input,input {
+	padding: 0;
+	margin: 0;
+}
+.insertImg {
+	width: 300px;
+	height: 300px;
+	border: 1px solid #111;
+}
+.insertImg img {
+	width: 150px;
+	height: 150px;
+}

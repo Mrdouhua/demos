@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Parent(name) {
+			this.name = name||"mo"; 
+		}
+		Parent.prototype.sayName = function() {
+			return this.name;
+		}
+
+		function Child(name) {
+			Parent.call(this,name);
+		}
+
+		function inherit (C,P) {
+			var F = function() {};
+			F.prototype = P.prototype;
+			C.prototype = new F();
+			// 重置构造函数的指针
+			C.prototype.constructor = C;
+			// uber用来储存超类,uber可以指向原始父对象的引用。
+			C.uber = P.prototype;
+		}
+		inherit(Child,Parent);
+		var ins = new Child();
+		console.log(ins.name);
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body,html {
+    padding: 0;
+    margin: 0;
+}
+.test_box {
+    display: -moz-box; 
+    display: -webkit-box;
+    display: -o-box;
+    display: box; 
+    
+    width: 500px;
+    height: 200px;
+    background: #f0f3f9;
+    -moz-box-pack:justify; 
+    -webkit-box-pack:justify; 
+    -o-box-pack:justify; 
+    box-pack:justify;
+ }
+.list {
+    width: 100px;
+    height: 100px;
+    font: bold 36px/120px monaco; 
+    text-shadow: 1px 1px #eee;
+    background-color: #fff;
+}

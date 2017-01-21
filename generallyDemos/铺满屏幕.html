@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			width: 100vw;
+			height: 100vh;
+			background-color: red;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+<input type="button" onclick="fullScreen();">
+<script type="text/javascript">
+	function fullScreen() { 
+		var el = document.documentElement; 
+		var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen; 
+		 
+		if (typeof rfs != "undefined" && rfs) { 
+			rfs.call(el); 
+		} else if (typeof window.ActiveXObject != "undefined") { 
+			// for Internet Explorer 
+			var wscript = new ActiveXObject("WScript.Shell"); 
+			if (wscript != null) { 
+			wscript.SendKeys("{F11}"); 
+			} 
+		} 
+	}
+</script>
+</body>
+</html>

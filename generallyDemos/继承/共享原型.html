@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Parent(name) {
+			this.name = name||"mo"; 
+		}
+		Parent.prototype.sayName = function() {
+			return this.name;
+		}
+
+		function Child(name) {
+			Parent.call(this,name);
+		}
+
+		function inherit (C,P) {
+			C.prototype = P.prototype;
+		}
+		inherit(Child,Parent);
+		var ins = new Child();
+		console.log(ins.name);
+	</script>
+</body>
+</html>

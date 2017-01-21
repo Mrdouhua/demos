@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+function Bar(){
+    this.foo = 123;
+}
+
+var temp = Bar;
+temp.foo   // undefined    这样是访问不到的，虽然temp指向了Bar的引用
+
+var bar = new Bar();
+bar.foo    // 123       因为bar是Bar的实例，所以可以理解为bar将Bar里的私有属性和方法都克隆到自己的身上，并且克隆过来的属性和方法和被克隆体(Bar)脱离干系。	
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sayName(obj) {
+			obj.name = "mo";
+			obj = new Object();
+			obj.age = "22";
+			console.log(obj.name,obj.age);
+		}
+
+		var person = new Object();
+		sayName(person);
+		// console.log(person.name,person.age);
+	</script>
+</body>
+</html>

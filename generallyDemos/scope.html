@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="test">text</div>
+	<script type="text/javascript">
+		test.onclick = function(){
+			console.log(this.innerHTML);
+		}
+		function scope(){
+			var a = 4;
+			function inner(){
+				var a = 5;
+				//console.log(this.a);
+				return a;
+			}
+			//inner();
+			return inner();
+		}
+		scope();
+		var myObject = {
+			year: 24,
+			name: 'mo',
+			outYear: function(){
+				return this.name;
+			}
+		}
+		console.log(myObject.year,myObject.outYear());
+		console.log(myObject.outYear());
+	</script>
+</body>
+</html>

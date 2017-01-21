@@ -1,0 +1,292 @@
+<html>
+<head>
+    <title>Untitled</title>
+    <style type="text/css">
+       input[type=button]
+       {
+           width:25px;
+           height:25px;
+       }
+    </style>
+    <script type="text/javascript">
+       var result=0;
+      var point=false;       //判断是小数点前还是后
+      var multiple=0.1;         //初始化小数点后的倍率
+      var sort=0;              //标记加减乘除
+      var temp=0;                //记录上一轮结果
+      function onbutton0()    //数字按钮动作
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+0;       //小数点前的处理
+           else                                    //小数点后的处理
+           {
+              result=result+multiple*0;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton1()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+1;
+           else
+           {
+              result=result+multiple*1;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton2()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+2;
+           else
+           {
+              result=result+multiple*2;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton3()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+3;
+           else
+           {
+              result=result+multiple*3;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton4()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+4;
+           else
+           {
+              result=result+multiple*4;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton5()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+5;
+           else
+           {
+              result=result+multiple*5;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton6()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+6;
+           else
+           {
+              result=result+multiple*6;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton7()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+7;
+           else
+           {
+              result=result+multiple*7;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton8()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+8;
+           else
+           {
+              result=result+multiple*8;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton9()
+       {
+         var name=document.getElementById("show");
+           if(!point) result=10*result+9;
+           else
+           {
+              result=result+multiple*9;
+              multiple=multiple*0.1;
+           }
+           name.value=String(result);
+       }
+       function onbutton_point()           //小数点按钮
+       {
+          var name=document.getElementById("show");
+           point=true;
+           name.value=String(result)+".";
+       }
+       function onbutton_back()        //退格按钮
+       {
+           var name=document.getElementById("show");
+           var temp=name.value;
+           name.value="";
+           for(var i=0;i<temp.length-1;i++)
+              name.value+=temp[i];
+       }
+       function onbutton_plus()
+       {
+           var name=document.getElementById("show");
+           point=false;
+           multiple=0.1;
+           switch (sort)                       //遇到下一个操作符时判断上一个操作符是什么，并进行上一个操作符的计算
+           {                                  //eg:1+2+3=  遇到第二个+时判断前一个符号，发现是+则进行+运算，得到3赋给result
+              case 1:result=result+temp;
+                   break;
+              case 2:result=temp-result;
+                   break;
+              case 3:result=temp*result;
+                   break;
+              case 4:result=temp/result;
+                   break;
+           }
+           sort=1;
+           temp=result;
+           result=0;
+           name.value="0";
+       }
+       function onbutton_minus()
+       {
+           var name=document.getElementById("show");
+           point=false;
+           multiple=0.1;
+           switch (sort)
+           {
+              case 1:result=result+temp;
+                   break;
+              case 2:result=temp-result;
+                   break;
+              case 3:result=temp*result;
+                   break;
+              case 4:result=temp/result;
+                   break;
+           }
+           sort=2;
+           temp=result;
+           result=0;
+           name.value="0";
+       }
+       function onbutton_mult()
+       {
+           var name=document.getElementById("show");
+           point=false;
+           multiple=0.1;
+           switch (sort)
+           {
+              case 1:result=result+temp;
+                   break;
+              case 2:result=temp-result;
+                   break;
+              case 3:result=temp*result;
+                   break;
+              case 4:result=temp/result;
+                   break;
+           }
+           sort=3;
+           temp=result;
+           result=0;
+           name.value="0";
+       }
+       function onbutton_div()
+       {
+           var name=document.getElementById("show");
+           point=false;
+           multiple=0.1;
+           switch (sort)
+           {
+              case 1:result=result+temp;
+                   break;
+              case 2:result=temp-result;
+                   break;
+              case 3:result=temp*result;
+                   break;
+              case 4:result=temp/result;
+                   break;
+           }
+           sort=4;
+           temp=result;
+           result=0;
+           name.value="0";
+       }
+       function onbutton_equal()
+       {
+           var name=document.getElementById("show");
+           point=false;                //重置
+           multiple=0.1;               //重置
+           switch (sort)
+           {
+              case 1:result=result+temp;
+                   break;
+              case 2:result=temp-result;
+                   break;
+              case 3:result=temp*result;
+                   break;
+              case 4:result=temp/result;
+                   break;
+           }
+           sort=0;                       //重置
+           temp=result;
+           result=0;
+           name.value=String(temp);
+       }
+       function onbutton_clear()   //重置为初始状态
+       {
+           result=0;
+         point=false;      
+         multiple=0.1;        //初始化小数点后的倍率
+         sort=0;             //标记加减乘除
+         temp=0;               //记录上一轮结果
+         var name=document.getElementById("show");
+         name.value="0";
+       }
+    </script>
+</head>
+ 
+<body>
+    <table align="center">
+      <tr>
+        <td colspan="5"><input type="text" value="0" id="show"></td>
+      </tr>
+      <tr>
+         <td><input type="button" value="7" onclick="onbutton7();"></td>
+         <td><input type="button" value="8" onclick="onbutton8();"></td>
+         <td><input type="button" value="9" onclick="onbutton9();"></td>
+         <td><input type="button" value="/" onclick="onbutton_div();"></td>
+         <td><input type="button" value="<" onclick="onbutton_back();"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" onclick="onbutton4();"></td>
+         <td><input type="button" value="5" onclick="onbutton5();"></td>
+         <td><input type="button" value="6" onclick="onbutton6();"></td>
+         <td><input type="button" value="*" onclick="onbutton_mult();"></td>
+         <td><input type="button" value="C" onclick="onbutton_clear();"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="1" onclick="onbutton1();"></td>
+         <td><input type="button" value="2" onclick="onbutton2();"></td>
+         <td><input type="button" value="3" onclick="onbutton3();"></td>
+         <td><input type="button" value="-" onclick="onbutton_minus();"></td>
+         <td rowspan="2"><input type="button" value="=" style="width:25px;height:57px;" onclick="onbutton_equal();"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="button" value="0" style="width:57px;height:25px;" onclick="onbutton0();"></td>
+         <td><input type="button" value="." onclick="onbutton_point();"></td>
+         <td><input type="button" value="+" onclick="onbutton_plus();"></td>
+      </tr>
+   </table>
+</body>
+</html>

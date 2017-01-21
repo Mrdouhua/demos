@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function create(name) {
+		var o = new Object();
+		o.name = name;
+		return o;
+	}
+
+	var person1 = create("mo");
+	console.log(person1 instanceof Object,person1 instanceof create);
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body,html,ul,li,p {
+	padding: 0;
+	margin: 0;
+}
+.container {
+	width: 502px;
+	height: 182px;
+	margin: 100px auto;
+	border: 1px solid #111;
+}
+.content {
+	width: 500px;
+	height: 150px;
+	/*background-color: blue;*/
+	overflow: hidden;
+}
+.lists {
+	width: 500px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.page {
+	width: 500px;
+	height: 30px;
+	text-align: center;
+	background-color: green;
+}
+.page span {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px;
+	cursor: pointer;
+}
+.page ul {
+	display: inline-block;
+	height: 30px;
+	vertical-align: top;
+}
+.page ul li {
+	float: left;
+	list-style: none;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+.page ul li.active {
+	background-color: orange;
+	color: #fff;
+}
+.page span.forbid {
+	background-color: gray;
+	cursor: not-allowed;
+}

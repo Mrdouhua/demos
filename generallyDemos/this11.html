@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var myapp = {
+		// var that = this;
+		color: "blue",
+		getColor: function() {
+			return this.color;
+		}
+	};
+	function find(){
+		console.log(myapp.getColor);
+	}
+	find();
+</script>	
+</body>
+</html>

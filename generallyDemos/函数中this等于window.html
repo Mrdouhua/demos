@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function a() {
+			b();
+		}
+		function b() {
+			c();
+		}
+		function c() {
+			this.cc = "c";
+			console.log(this === window);
+		}
+	</script>
+</body>
+</html>

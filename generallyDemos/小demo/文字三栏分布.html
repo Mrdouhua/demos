@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.col {
+			/*width: 300px;*/
+			/*height: 300px;*/
+			background-color: red;
+			column-count: 3;
+			column-width: 14em;
+			column-gap: 2em;
+			column-rule: 1px solid #ccc;
+			-webkit-column-count: 3;
+			-webkit-column-width: 14em;
+			-webkit-column-gap: 2em;
+			-webkit-column-rule: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<h1>dfdsf</h1>
+	<div class="col">
+		<p>
+			闭包其实就是能够读取其他函数内部变量的函数。
+由于在javascript语言中，只由函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成“定义在一个函数内部的函数”
+/闭包的概念：当一个内部函数被其外部函数之外的变量引用时，就形成了一个闭包。
+所以，在本质上，闭包就是将函数内部和函数外部链接起来的一座桥梁
+/在C/C++中，花括号内中的每一段代码都具有各自的作用域，而且变量在声明它们的代码段之外是不可见的。而Javascript压根没有块级作用域，而是函数作用域
+/作用域：它是指对某一变量和方法具有访问权限的代码空间, 在JS中, 作用域是在函数中维护的.
+/作用域链：可以被看作一种路径, 沿着这条路径可以确定变量的值.
+/JavaScript中，JavaScript里一切都是对象，包括函数。函数对象和其它对象一样，拥有可以通过代码访问的属性和一系列仅供JavaScript引擎访问的内部属性。其中一个内部属性是作用域，包含了函数被创建的作用域中对象的集合，称为函数的作用域链。
+/HTML文档中嵌入js的四种方法：
+1、内联，js内容放到script标签中间
+2、由scirpt标签的src属性引入 // 最常用的方式，也是最推荐的一种
+3、通过html的onclick、onmouseover这样的属性指定 // 取消元素的默认行为时常用
+4、伪协议，"javascript:" // 使用a标签模拟tab切换时常用，还有url、form的action属性、window.open等
+/使用javascript的src属性引入js文件的优点：
+		</p>
+	</div>
+</body>
+</html>

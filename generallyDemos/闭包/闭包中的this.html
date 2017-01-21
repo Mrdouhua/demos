@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var a = "windowA";
+
+	function fun1() {
+		var a = "fun1A"
+
+		function fun2(){
+			return this.a;
+		}
+		return fun2;
+	}
+	var get = fun1();
+	console.log(get());
+</script>	
+</body>
+</html>

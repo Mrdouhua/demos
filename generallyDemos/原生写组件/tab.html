@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,html,ul,li {
+			padding: 0;cv
+			margin: 0;
+		}
+		.clear {
+			zoom: 1;
+		}
+		.clear:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.tab {
+			width: 299px;
+			height: 230px;
+			margin: 100px auto;
+			border: 1px solid #111;
+		}
+		li {
+			float: left;
+			width: 99px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			background-color: #777;
+			margin-right: 1px;
+			list-style: none;
+		}
+		.activity {
+			background-color: blue;
+			color: #fff;
+		}
+		.tab-box {
+			width: 299px;
+			height: 200px;
+			overflow: hidden;
+		}
+		.tab-box>div {
+			float: left;
+			width: 299px;
+			height: 200px;
+		}
+		.hide {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="tab" id="tab">
+		<ul id="tab-list" class="clear">
+			<li class="activity">11111</li>
+			<li>22222</li>
+			<li style="margin-right: 0;">33333</li>
+		</ul>
+		<div class="tab-box" id="tab-box">
+			<div>1111111111</div>
+			<div class="hide">2222222222</div>
+			<div class="hide">3333333333</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="tab.js"></script>
+</body>
+</html>

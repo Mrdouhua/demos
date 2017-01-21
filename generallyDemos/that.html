@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="div" style="width: 200px; height: 200px; background:red;"></div>
+	<script type="text/javascript">
+		var oDiv = document.getElementById('div');
+		oDiv.onclick = function (){
+			var a = 5;
+			console.log(this.style.width);
+			var that = this;
+			function b(){
+				console.log(that.style.width);
+			}
+			return b();
+		}
+	</script>
+</body>
+</html>

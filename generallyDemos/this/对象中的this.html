@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var name = "mo";
+
+	var person = {
+		name: "xiao",
+		sayName: function() {
+			// setTimeout(function(){console.log(this.name)},1000);
+			setTimeout(() => console.log(this.name),1000);
+		}
+	}
+
+	person.sayName();
+</script>
+</body>
+</html>

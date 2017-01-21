@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>流瀑布布局</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- <link href="css/index.css" rel="stylesheet"> -->
+<style type="text/css">
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-02-17 15:14:01
+ * @version $Id$
+ */
+.wrap{
+    position: relative;
+}
+.box{
+    padding:15px 0 0 15px;
+    float: left;
+    width:220px;
+    overflow:hidden;
+    position: relative;
+}
+.box .pic{
+    height: auto;
+    width: 100%;
+    padding:15px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    overflow:hidden;
+    position: relative;
+}
+.box .pic img{
+    width: 100%;
+}
+.face{
+    height: 100%;
+    width: 100%;
+    padding:15px;
+    box-sizing:border-box;
+    text-indent: 2em;
+    border-radius: 5px;
+    overflow:hidden;
+    box-shadow: 0 0 5px #ccc;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.face .left{
+    height: 100%;
+    width: 50%;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    left: -300px;
+    top:0;
+    transition:all ease linear 0.5s;
+    -webkit-transition:all linear 0.5s;
+    -moz-transition:all linear 0.5s;
+    z-index: 88;
+}
+.face .right{
+    height: 100%;
+    width: 50%;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    right: -300px;
+    top:0;
+    transition:all ease linear 0.5s;
+    z-index: 88;
+    -webkit-transition:all linear 0.5s;
+    -moz-transition:all linear 0.5s;
+}
+.face p{
+    margin-top:20px;
+    text-align: left;
+    color:white;
+    width: 100%;
+    padding:0px 15px;
+    font-size: 14px;
+    line-height: 20px;
+    box-sizing:border-box;
+    transition:all  linear 0.8s;
+    -webkit-transition:all linear 0.8s;
+    -moz-transition:all linear 0.8s;
+    z-index: 999999;
+    position: absolute;
+    left: 0;
+    top:-200px;
+}
+.box .pic:hover .face .left{
+    left: 0px;
+}
+.box .pic:hover .face p{
+    top:0;
+}
+.box .pic:hover .face .right{
+    right: 0px;
+
+}
+   
+
+
+</style>
+</head>
+<body>
+<div class="wrap" id='wrap'>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/15.jpg" alt="">
+            <div class="face">
+                <p>十年前你是谁，一年前你是谁，甚至昨天你是谁，都不重要。重要的是，今天你是谁?</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/16.jpg" alt="">
+            <div class="face">
+                <div></div>
+                <p>人生是很累的，你现在不累，以后就会更累。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/17.jpg" alt="">
+            <div class="face">
+                <p>顺境中意气风发，困境是也应该坦然面对，这才是积极的人生。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/40.jpg" alt="">
+            <div class="face">
+                <p>习惯着彼此的语言，重复万遍也不觉厌倦;等待着彼此的晚安，只因为心里那份惦念。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/16.jpg" alt="">
+            <div class="face">
+                <p>若有若无的联系，是一份随意;或深或浅的交集，是一份默契。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/17.jpg" alt="">
+            <div class="face">
+                <p>没有人陪你走一辈子，所以你要适应孤独;没有人会帮你一辈子，所以你要一直奋斗。(</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/16.jpg" alt="">
+            <div class="face">
+                <p>有一种陪伴虽不见身影，却很真诚;有一种守候虽悄然无声，却很深情。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/18.jpg" alt="">
+            <div class="face">
+                <p> 若有若无的联系，是一份随意;或深或浅的交集，是一份默契。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/19.jpg" alt="">
+            <div class="face">
+                <p> 无论何种感情，不要成为一种负累。若形成压力，总要逃离;若造就牵绊，总会失去。在意，却不刻意;珍惜，却不痴迷。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/20.jpg" alt="">
+            <div class="face">
+                <p>暮然回首，灯火阑珊处，唯有那一盏灯的光芒，不见谁的谁来谁往！</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/21.jpg" alt="">
+            <div class="face">
+                <p>苦忆旧伤泪自落，欣望梦愿笑开颜。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/22.jpg" alt="">
+            <div class="face">
+                <p>倘若希望在金色的秋天收获果实，那么在寒意侵人的早春，就该卷起裤腿，去不懈地拓荒、播种、耕耘，直到收获的那一天。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/23.jpg" alt="">
+            <div class="face">
+                <p>耐力，是一种不显山石露水的执着；是一种不惧风不畏雨的坚忍；是一种不图名不图利的忠诚。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/24.jpg" alt="">
+            <div class="face">
+                <p>人生就像一座山，重要的不是它的高低，而在于灵秀；人生就像一场雨，重要的不是它的大小，而在于及时。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/25.jpg" alt="">
+            <div class="face">
+                <p>机会靠自己争取，命运需自己把握，生活是自己的五线谱，威慑呢们不亲自演奏好它？</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/26.jpg" alt="">
+            <div class="face">
+                <p>努力奋斗，天空依旧美丽，梦想仍然纯真，放飞自我，勇敢地飞翔于梦想的天空，相信自己一定做得更好。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/27.jpg" alt="">
+            <div class="face">
+                <p>踏过一片海，用博识的学问激起片片微澜；采过一丛花，正在聪慧的碰碰外送来缕缕清喷鼻；无过一个梦，决定从那里启程。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/28.jpg" alt="">
+            <div class="face">
+                <p>暮然回首，灯火阑珊处，唯有那一盏灯的光芒，不见谁的谁来谁往！</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/29.jpg" alt="">
+            <div class="face">
+                <p>暮然回首，灯火阑珊处，唯有那一盏灯的光芒，不见谁的谁来谁往！</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/30.jpg" alt="">
+            <div class="face">
+                <p>暮然回首，灯火阑珊处，唯有那一盏灯的光芒，不见谁的谁来谁往！</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/31.jpg" alt="">
+            <div class="face">
+                <p>落地窗，窗内，洒了一地的明媚，窗外，繁衍了满地的苍翠，窗帘上的流苏，飘动着，此刻的最美。这时，只管细细地体会，清幽处的最真最美。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/32.jpg" alt="">
+            <div class="face">
+                <p>骤雪初霁，冬日里的太阳似乎拉近了与人的距离，显得格外地清晰，格外地耀眼。但阳光的温度却好像被冰雪冷却过似的，怎么也热不起来了。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/33.jpg" alt="">
+            <div class="face">
+                <p> 看晴空万里，乘秋凉之风，述心感内韵，滴羞涩淡墨，谁人心戚戚，一见却钟情，……一叶随风</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/34.jpg" alt="">
+            <div class="face">
+                <p>曾經我們一起歡笑，一起哭鬧，一起無知的做著無知的事……也許那時我們還沒有長大，然而現在我們卻分離，再也不能像以前那樣瘋狂，但是我們的那份情感卻那麼刻骨銘心……</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/35.jpg" alt="">
+            <div class="face">
+                <p> 你轻轻从我身旁走过，让我感觉像微风从我声旁吹过，带着一股迷人的香味，让我感觉到你好像就是我生命中的那朵花，但我不敢伸手去把你摘下。</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/36.jpg" alt="">
+            <div class="face">
+                <p>时光的齿轮，总会不停地转着，斑驳了陈旧的过往</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/37.jpg" alt="">
+            <div class="face">
+                <p> 时间的沙漏总是遗忘那些美好的过往，记忆的双手总是拾起那些明媚的忧伤</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/38.jpg" alt="">
+            <div class="face">
+                <p> 我本天上孤星，怎知世事人情。不爱世间纷扰，却被孤独缠绕</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/39.jpg" alt="">
+            <div class="face">
+                <p> 浮生一世繁华尽，流水无情花有意。梦醒后，心碎无声。知否？晓否？</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/40.jpg" alt="">
+            <div class="face">
+                <p>暮然回首，灯火阑珊处，唯有那一盏灯的光芒，不见谁的谁来谁往！</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/41.jpg" alt="">
+            <div class="face">
+                <p>暮然回首，灯火阑珊处，唯有那一盏灯的光芒，不见谁的谁来谁往！</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+        <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/39.jpg" alt="">
+            <div class="face">
+                <p> 浮生一世繁华尽，流水无情花有意。梦醒后，心碎无声。知否？晓否？</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/40.jpg" alt="">
+            <div class="face">
+                <p>暮然回首，灯火阑珊处，唯有那一盏灯的光芒，不见谁的谁来谁往！</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="http://www.zxhuan.com/wp-content/uploads/2016/02/41.jpg" alt="">
+            <div class="face">
+                <p>暮然回首，灯火阑珊处，唯有那一盏灯的光芒，不见谁的谁来谁往！</p>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script type="text/javascript" src="js/index.js"></script> -->
+<script type="text/javascript">
+window.onload=function(){
+    warterFall('wrap','box');
+    window.onscroll=function(){
+        if(checkscroll()){
+            var dataImg={
+                "data":[
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/15.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/15.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/16.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/18.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/20.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/21.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/31.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/25.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/26.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/30.jpg'},
+                    {"src":'http://www.zxhuan.com/wp-content/uploads/2016/02/35.jpg'}
+                ],
+                "article":[
+                   '有一种陪伴虽不见身影，却很真诚;有一种守候虽悄然无声，却很深情。',
+                   '无论何种感情，不要成为一种负累。若形成压力，总要逃离;若造就牵绊，总会失去。在意，却不刻意;珍惜，却不痴迷',
+                   '在爱情的问题上，往往没有谁对谁错，爱情只是一种缘分。缘至则聚，缘尽则散。能够结为夫妻并相伴到地老天荒，那是珍贵的不尽缘。',
+                   ' 走千条路，只一条适合;遇万般人，得一人足够。',
+                   '习惯着彼此的语言，重复万遍也不觉厌倦;等待着彼此的晚安，只因为心里那份惦念。',
+                   '趁着年轻，大胆地走出去，去迎接风霜雨雪的洗礼，',
+                   '我想我们每一个人都必须学会适应聚散无常，而不是每次都手足无措地哭泣',
+                   '成长起码有一个好处 想去什么地方 能掏出一张车票钱以前那么想 现在还这么想',
+                   '在爱情的问题上，往往没有谁对谁错，爱情只是一种缘分。缘至则聚，缘尽则散。能够结为夫妻并相伴到地老天荒，那是珍贵的不尽缘。',
+                   '你不必流离失所也不必像一个拾荒者那般寂寥无色只要在路边等待 便不会错过末班车',
+                   '不是我小气，只是我现在用的我父母的血汗钱，让我如何大方 ?',
+                   '一个成熟的人往往发觉可以责怪的人越来越少，人人都有他的难处。',
+                   '你还要长大 几经苦苦挣扎几度重新站立绝不服输'
+
+                ]
+            }
+            for(var i=0;i<dataImg.data.length;i++){
+                var oParent=document.getElementById('wrap');
+                var oBox=document.createElement('div');
+                    oBox.className='box';
+                    oParent.appendChild(oBox);
+                var oPic=document.createElement('div');
+                    oPic.className='pic';
+                    oBox.appendChild(oPic);
+                var oImg=document.createElement('img');
+                    oImg.src=dataImg.data[i].src;
+                    oPic.appendChild(oImg);
+                var oFace=document.createElement('div');
+                    oFace.className='face';
+                    oPic.appendChild(oFace);
+                var oLeft=document.createElement('div');
+                    oLeft.className='left';
+                    oFace.appendChild(oLeft);
+               var oRight=document.createElement('div');
+                    oRight.className='right';
+                    oFace.appendChild(oRight);
+                var oP=document.createElement('p');
+                    oFace.appendChild(oP);
+                    oP.innerHTML=dataImg.article[i];
+            }
+            warterFall('wrap','box');
+        }
+    }
+}
+function warterFall(parent,child){
+    var oParent=document.getElementById(parent);
+    var oBox=getClassName(oParent,child);
+    console.log(oBox);
+    var oBoxW=oBox[0].offsetWidth;
+    var winW=document.documentElement.clientWidth||document.body.clientWidth;
+    var mun=Math.floor(winW/oBoxW);
+    /**
+     * wrap 居中
+     */
+    oParent.style.cssText="width:"+oBoxW*mun+'px;margin:auto'
+    var arrBoxH=[];
+    for(var i=0;i<oBox.length;i++){
+        var oBoxH=oBox[i].offsetHeight;
+        if(i<mun){
+            arrBoxH.push(oBoxH)
+        }else{
+            var minH=Math.min.apply(null,arrBoxH);
+            var minHIndex=getIndex(minH,arrBoxH);
+            oBox[i].style.position='absolute';
+            oBox[i].style.left=oBox[minHIndex].offsetLeft+'px';
+            oBox[i].style.top=arrBoxH[minHIndex]+'px';
+            arrBoxH[minHIndex]+=oBox[i].offsetHeight;
+        }
+    }
+}
+function getClassName(parent,child){
+    var arr=[];
+    var allBox=parent.getElementsByTagName('*');
+    for(var i=0;i<allBox.length;i++){
+        if(allBox[i].className==child){
+            arr.push(allBox[i]);
+        }
+    }
+    return arr;
+}
+function getIndex(minH,arrBoxHeight){
+    for(i in arrBoxHeight){
+        if(arrBoxHeight[i]==minH){
+            return i;
+        }
+    }
+}
+function checkscroll(){
+    var oParent=document.getElementById('wrap');
+    var oBox=getClassName(oParent,'box');
+    var lastBox=oBox[oBox.length-1];
+    console.log(lastBox);
+    var lastBoxT=Math.floor(lastBox.offsetTop+lastBox.offsetHeight/2);
+    var winH=document.documentElement.clientHeight;
+    var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    return (lastBoxT<winH+scrollTop)?true:false;
+    // if(lastBoxT<winH+scrollTop){
+    //     return true;
+    // }else{
+    //     retuen false;
+    // }
+}
+</script>
+</body>
+</html>

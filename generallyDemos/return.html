@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Get(){
+			var name = "mo";
+			return name;
+			this.getName = function(){
+				return 'name1';
+			}
+		}
+		var obj = new Get();
+		console.log(obj,Get())
+		// console.log(obj.getName());
+	</script>
+</body>
+</html>

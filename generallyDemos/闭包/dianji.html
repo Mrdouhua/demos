@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body,html {
+			padding: 0;
+			margin: 0;
+		}
+		ul {
+			width: 305px;
+			height: 30px;
+			margin: 100px auto;
+			padding: 0;
+		}
+		li {
+			width: 60px;
+			height: 30px;
+			list-style: none;
+			float: left;
+			margin: 0 1px 0 0;
+			padding: 0;
+			background-color: orange;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script type="text/javascript">
+	window.onload = function() {
+		var oUl = document.getElementsByTagName('ul')[0],
+			oLi = oUl.getElementsByTagName('li');
+
+		for(var i = 0,len = oLi.length;i < len;i++){
+			oLi[i].index = i;
+			oLi[i].onclick = function() {
+				console.log(this.index);
+			}
+		}
+	}	
+	</script>
+</body>
+</html>

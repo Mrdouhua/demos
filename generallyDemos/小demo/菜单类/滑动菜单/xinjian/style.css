@@ -1,0 +1,31 @@
+html,body,ul,li {
+	padding: 0;
+	margin: 0;
+}
+#nav {
+	width: 1000px;
+	height: 35px;
+	background-color: #ccc;
+	position: relative;
+	list-style-type: none;
+	margin: 100px auto;
+}
+li {
+	float: left;
+	width: 100px;
+	height: 33px;
+	line-height: 33px;
+	text-align: center;
+}
+#nav .cur {
+	position: absolute;
+	width: 100px;
+	height: 5px;
+	background-color: red;
+	bottom: 0;
+	left: 0;
+}
+#nav li:hover {
+	background-color: green;
+	color: #777;
+}

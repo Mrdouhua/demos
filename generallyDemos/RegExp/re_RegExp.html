@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+</head>
+<body>
+	<form action="">
+		<label for="">密码</label>
+		<input id="test" type="text" name="text">
+	</form>
+	<script type="text/javascript">
+		//var oText = document.getElementsByTagName('input')[0].value;
+		var oText = "";
+		//var re = /\b[^\Wa-z0-9_][^\WA-Z0-9_]*\b/;
+		var re = new RegExp("\\b[^\\Wa-z0-9_][^\\WA-Z0-9_]*\\b");
+		var oT = document.getElementById('test');
+		
+		oT.onblur = function(){
+			//var oTo = $('#test').val();
+			//var oTo = document.getElementById('test').value;
+			//console.log(oTo);
+			var oText = document.getElementsByTagName('input')[0].value;
+			console.log(oText);
+			if(!re.test(oText)){
+				console.log("不是大");
+			} else{
+				console.log("大写");
+			}	
+		}
+		
+	</script>
+</body>
+</html>

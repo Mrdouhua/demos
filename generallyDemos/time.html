@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="time"></div>
+	<script type="text/javascript">
+		(function time() {
+			var oTime = document.getElementById('time');
+			var now = new Date();
+			var year = now.getFullYear();
+			var month = now.getMonth() + 1;
+			var day = now.getDate();
+			var hour = now.getHours();
+			var minute = now.getMinutes();
+			var second = now.getSeconds();
+			var timer = null;
+
+			
+			oTime.innerHTML = year+"年"+month+"月"+day+"日"+hour+"点"+minute+"分"+second+"秒";
+			timer = setInterval(time,1000);
+			
+			function check(t) {
+				if(t < 10) {
+					return "0"+t;
+				}
+			}
+		})();
+	</script>
+</body>
+</html>

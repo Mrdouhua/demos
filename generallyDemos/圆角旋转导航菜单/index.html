@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>圆形旋转导航菜单</title>
+		<style>
+			html,body{padding: 0;margin: 0;}
+		</style>
+		<script src="jquery.js"></script>
+		<script src="jquery.rotate.min.js"></script>
+	</head>
+	<body>
+		<!-- 代码部分begin -->
+		<!--
+			圆形菜单[最多容纳8个最大正方形菜单块, 若需容纳更多的菜单块,则需要缩小菜单块的大小]
+			半径 oR = 150px;
+			圆心坐标(150,150)
+		-->
+		<div id="outerDiv" style="background-color: black;width:300px;height:300px;border-radius:150px;position: absolute;">
+			<!--
+				圆心
+				半径 iR = 50px;
+				圆心坐标(150,150)
+			-->
+			<div id="" style="background: blue;width: 100px;height: 100px;border-radius: 50px;position: absolute;left:100px;top:100px;"></div>
+			<!--
+				==========================
+				最大菜单块(正方形)
+				对角线长度 mDLen = oR - iR;
+				边长 mWidth = mHeight = mDLen的平方 / 2 的结果 再开方 最后取整
+				==========================
+				菜单块滑动圆
+				半径 mR = iR + (mDLen / 2)
+				==========================
+			-->
+			<div id="m1" style="position: absolute; background: yellow;">1</div>
+			<div id="m2" style="position: absolute; background: red;">2</div>
+			<div id="m3" style="position: absolute; background: yellow;">3</div>
+			<div id="m4" style="position: absolute; background: red;">4</div>
+			<div id="m5" style="position: absolute; background: yellow;">5</div>
+			<div id="m6" style="position: absolute; background: red;">6</div>
+			<div id="m7" style="position: absolute; background: yellow;">7</div>
+			<div id="m8" style="position: absolute; background: red;">8</div>
+		</div>
+		<script type="text/javascript">
+			var or = 150;
+			var ir = 50;
+			var mWidth = 54;
+			var mDLen = Math.sqrt(2 * Math.pow(mWidth,2));
+			//第1菜单块中心点与以o(150,150)为圆心的的X轴的夹角为-90(-PI/2), 求菜单块中心点坐标
+			var m1X = parseInt( (Math.cos( -1 * Math.PI / 2 ) * (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			var m1Y = parseInt( (Math.sin( -1 * Math.PI / 2 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			$("#m1").width(mWidth);
+			$("#m1").height(mWidth);
+			$("#m1").offset( {top:m1Y,left:m1X} );
+
+			//第2菜单块中心点与以o(150,150)为圆心的的X轴的夹角为-45(-PI/4), 求菜单块中心点坐标
+			var m2X = parseInt( (Math.cos( -1 * Math.PI / 4 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			var m2Y = parseInt( (Math.sin( -1 * Math.PI / 4 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			$("#m2").width(mWidth);
+			$("#m2").height(mWidth);
+			$("#m2").offset( {top:m2Y,left:m2X} );
+
+			//第3菜单块中心点与以o(150,150)为圆心的的X轴的夹角为0(0), 求菜单块中心点坐标
+			var m3X = parseInt( (Math.cos( 0 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			var m3Y = parseInt( (Math.sin( 0 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			$("#m3").width(mWidth);
+			$("#m3").height(mWidth);
+			$("#m3").offset( {top:m3Y,left:m3X} );
+
+			//第4菜单块中心点与以o(150,150)为圆心的的X轴的夹角为45(PI/4), 求菜单块中心点坐标
+			var m4X = parseInt( (Math.cos( Math.PI / 4 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			var m4Y = parseInt( (Math.sin( Math.PI / 4 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			$("#m4").width(mWidth);
+			$("#m4").height(mWidth);
+			$("#m4").offset( {top:m4Y,left:m4X} );
+
+			//第5菜单块中心点与以o(150,150)为圆心的的X轴的夹角为90(PI/2), 求菜单块中心点坐标
+			var m5X = parseInt( (Math.cos( Math.PI / 2 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			var m5Y = parseInt( (Math.sin( Math.PI / 2 ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			$("#m5").width(mWidth);
+			$("#m5").height(mWidth);
+			$("#m5").offset( {top:m5Y,left:m5X} );
+
+			//第6菜单块中心点与以o(150,150)为圆心的的X轴的夹角为135(0.75PI), 求菜单块中心点坐标
+			var m6X = parseInt( (Math.cos( 0.75 * Math.PI ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			var m6Y = parseInt( (Math.sin( 0.75 * Math.PI ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			$("#m6").width(mWidth);
+			$("#m6").height(mWidth);
+			$("#m6").offset( {top:m6Y,left:m6X} );
+
+			//第7菜单块中心点与以o(150,150)为圆心的的X轴的夹角为180(PI), 求菜单块中心点坐标
+			var m7X = parseInt( (Math.cos( Math.PI ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			var m7Y = parseInt( (Math.sin( Math.PI ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			$("#m7").width(mWidth);
+			$("#m7").height(mWidth);
+			$("#m7").offset( {top:m7Y,left:m7X} );
+
+			//第8菜单块中心点与以o(150,150)为圆心的的X轴的夹角为-135(PI), 求菜单块中心点坐标
+			var m8X = parseInt( (Math.cos( -0.75 * Math.PI ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			var m8Y = parseInt( (Math.sin( -0.75 * Math.PI ) *  (ir + ((or - ir - mDLen)/2) + mDLen/2) ) + 150 - mWidth/2 );
+			$("#m8").width(mWidth);
+			$("#m8").height(mWidth);
+			$("#m8").offset( {top:m8Y,left:m8X} );
+
+			//===============================================
+
+			var preX,preY;//上一次鼠标点的坐标
+			var curX,curY;//本次鼠标点的坐标
+			var preAngle;//上一次鼠标点与圆心(150,150)的X轴形成的角度(弧度单位)
+			var transferAngle;//当前鼠标点与上一次preAngle之间变化的角度
+
+			var a = 0;
+
+			for(var i = 0 ; i < 15 ; i++){
+				$("body").append("<br>");
+			}
+
+			//点击事件
+			$("#outerDiv").mousedown(function(event){
+				preX = event.clientX;
+				preY = event.clientY;
+				//计算当前点击的点与圆心(150,150)的X轴的夹角(弧度) --> 上半圆为负(0 ~ -180), 下半圆未正[0 ~ 180]
+				preAngle = Math.atan2(preY - 150, preX - 150);
+				//移动事件
+				$("html").mousemove(function(event){
+					curX = event.clientX;
+					curY = event.clientY;
+					//计算当前点击的点与圆心(150,150)的X轴的夹角(弧度) --> 上半圆为负(0 ~ -180), 下半圆未正[0 ~ 180]
+					var curAngle = Math.atan2(curY - 150, curX - 150);
+					transferAngle = curAngle - preAngle;
+					a += (transferAngle * 180 / Math.PI);
+					$('#outerDiv').rotate(a);
+
+					for( var i = 1 ; i <= 8 ; i++ ){
+						$("#m"+i).rotate(-a);
+					}
+					preX = curX;
+					preY = curY;
+					preAngle = curAngle;
+				});
+				//释放事件
+				$("html").mouseup(function(event){
+					$("html").unbind("mousemove");
+				});
+			});
+		</script>
+		<!-- 代码部分end -->
+	</body>
+</html>

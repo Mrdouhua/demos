@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var values = [1,2,3,4,5];
+	var sum = values.reduce(function(prev,cur,index,values){
+		console.log(index,values);
+		return prev + cur;
+	});
+
+</script>	
+</body>
+</html>

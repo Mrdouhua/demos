@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body,html,ul,li {
+			padding: 0;
+			margin: 0;
+		}
+		.box-title {
+			width: 306px;
+			height: 34px;
+		}
+		.box-title li {
+			list-style: none;
+			float: left;
+			width: 100px;
+			height: 33px;
+			border: 1px solid #555;
+			border-bottom: none;
+		}
+		.box-title li.active {
+			height: 34px;
+			background-color: #fff;
+		}
+		.box-con {
+			width: 304px;
+			height: 200px;
+			border: 1px solid #000;
+			/*background-color: #999;*/
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="box-title">
+			<ul>
+				<li>1</li>
+				<li class="active">2</li>
+				<li>3</li>
+			</ul>
+		</div>
+		<div class="box-con"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form>
+		<input type="text" name="" id="numInput"><br>
+		<input type="reset" name="">
+		<input type="submit" name="" id="subBtn">
+	</form>
+
+<script type="text/javascript">
+	var numInput = document.getElementById('numInput'),
+		subBtn = document.getElementById('subBtn');
+
+	function calculate() {
+		var arr1 = [];
+		var numInputVal = numInput.value;
+		console.log(eval(numInputVal));
+	}
+
+	subBtn.onclick = function(){
+		calculate();
+		return false;
+	}
+</script>
+</body>
+</html>

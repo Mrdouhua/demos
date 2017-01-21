@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>caller</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function outer() {
+			inner();
+		}
+
+		// function inner() {
+		// 	console.log(inner.caller);
+		// }
+
+		function inner() {
+			console.log(this.caller); // 函数之间的调用this指向window
+		}
+
+		outer();
+	</script>
+</body>
+</html>

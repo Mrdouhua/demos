@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="mydiv">
+	123
+</div>
+<script type="text/javascript">
+	
+	/*document.onclick = function(e){//e?
+    var a = document.offsetLeft;
+    var c = document.offsetParent;
+    console.log(c);
+	    while (c !==null){
+	     a += c.offsetLeft;
+	     c = c.offsetParent;
+	   }
+	    console.log(a);
+	}*/
+	function off(e){//e?
+    var a = e.offsetLeft;
+    var c = e.offsetParent;
+    console.log(c);
+	    while (c !==null){
+	     a += c.offsetLeft;
+	     c = c.offsetParent;
+	   }
+	    console.log(a);
+	}
+	var myDiv = document.getElementById("mydiv");
+    off(myDiv);
+
+</script>	
+</body>
+</html>

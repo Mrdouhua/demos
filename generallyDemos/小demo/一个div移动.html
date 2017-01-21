@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+	div {
+		position: relative;
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+  </style>
+<body>
+  <div id="myDiv" dropEffect="all"></div>
+  <script type="text/javascript">
+  window.onload = function(){
+  	var oDiv = document.getElementById("myDiv");
+  	oDiv.onmouseover = function(){
+  		starMove(300);
+  	}
+  	oDiv.onmouseout = function(){
+  		starMove(100);
+  	}
+  }
+  	var timer = null;
+  	function starMove(iTarget){
+  		var oDiv = document.getElementById("myDiv"); 
+  		clearInterval(timer);
+  		timer = setInterval(function(){
+  			var iSpeed = (iTarget-oDiv.offsetWidth)/8;
+  			iSpeed = iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+
+  			if(oDiv.offsetWidth == iTarget ){
+  				clearInterval(timer);
+  			}
+  			else{
+  				oDiv.style.width = oDiv.offsetWidth + iSpeed + 'px';
+  			}
+
+  		},30)
+  	}
+  </script>
+</body>
+</html>

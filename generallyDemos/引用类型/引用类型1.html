@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sayName(obj) {
+			console.log(obj,"obj1");
+			this.obj = "4";
+			console.log(obj,this.obj,"obj2");
+			console.log(this,"this");
+		}
+		
+		var person = "3";
+		sayName(person);
+		console.log(obj,"外面访问obj");
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li> 
+		<a href="1.jpg" onclick="showPic(this);return false;">111</a>
+		</li>
+		<li>
+			<a href="2.jpg" onclick="showPic(this);return false;">222</a>
+		</li>
+		<li>
+			<a href="3.jpg" onclick="showPic(this);return false;">333</a>
+		</li>
+		<li>
+			<a href="https://www.baidu.com" onclick="showPic(this);return false;">baidu</a>
+		</li>
+	</ul>
+	<img src="placeholder.jpg" id="placeholder" />
+	<script type="text/javascript">
+		function showPic(whichpic) {
+			var source = whichpic.getAttribute("href");
+			var placeholder = document.getElementById("placeholder");
+			placeholder.setAttribute("src",source);
+		}
+	</script>
+</body>
+</html>

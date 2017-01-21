@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.myDiv {
+			width: 100px;
+			height: 100px;
+			position: relative;
+			left: 10px;
+			top: 10px;
+			border: 1px solid #111;
+			background-color: #fff;
+			box-sizing: border-box;
+			-webkit-animation: expand 6s infinite;
+		}
+		/*.myDiv:hover {
+			background-color: silver;
+			width: 200px;
+			height: 200px;
+		}*/
+		@-webkit-keyframes expand {
+			from {top: 10px; left: 10px;}
+			to {top: 100px; left: 100px;}
+		}
+	</style>
+</head>
+<body>
+	<div class="myDiv"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function SuperType(name) {
+		this.name = name || "mo";
+		}
+	}
+	SuperType.prototype.getName = function () {
+		return this.name;
+	}
+	function SubType() {
+		SuperType.call(this,"mo");
+	}
+
+	var ins1 = new SubType();
+	console.log(ins1.getName());
+</script>	
+</body>
+</html>

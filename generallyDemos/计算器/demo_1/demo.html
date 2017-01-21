@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">  
+	* {  
+	    margin: 0px;  
+	    padding: 0px;  
+	}  
+	  
+	td {  
+	    background-color: #303133;  
+	    width: 100px;  
+	    height: 80px;  
+	    color: white;  
+	    text-align: center;  
+	    font-size: 20px;  
+	}  
+	  
+	.td_orange {  
+	    background-color: #FA6F14;  
+	}  
+	</style>  
+</head>
+<body>
+	<table align="center">  
+	    <tr>  
+	        <td class="td_orange" colspan="5" id="content"></td>  
+	    </tr>  
+	    <tr>  
+	        <td class="td_orange" colspan="5" id="result"></td>  
+	    </tr>  
+	    <tr>  
+	        <td onclick="appContent(this)">1</td>  
+	        <td onclick="appContent(this)">2</td>  
+	        <td onclick="appContent(this)">3</td>  
+	        <td onclick="appContent(this)">*</td>  
+	        <td onclick="appContent(this)">/</td>  
+	    </tr>  
+	    <tr>  
+	        <td onclick="appContent(this)">4</td>  
+	        <td onclick="appContent(this)">5</td>  
+	        <td onclick="appContent(this)">6</td>  
+	        <td onclick="appContent(this)">+</td>  
+	        <td onclick="appContent(this)">-</td>  
+	    </tr>  
+	    <tr>  
+	        <td onclick="appContent(this)">7</td>  
+	        <td onclick="appContent(this)">8</td>  
+	        <td onclick="appContent(this)">9</td>  
+	        <td onclick="appContent(this)">(</td>  
+	        <td onclick="appContent(this)">)</td>  
+	    </tr>  
+	    <tr>  
+	        <td class="td_orange" onclick="appContent(this)">c</td>  
+	        <td onclick="appContent(this)">0</td>  
+	        <td onclick="appContent(this)">.</td>  
+	        <td onclick="appContent(this)">del</td>  
+	        <td class="td_orange" onclick="appContent(this)">=</td>  
+	    </tr>  
+	</table> 
+	<script type="text/javascript" src="js/demo.js"></script>
+</body>
+</html>

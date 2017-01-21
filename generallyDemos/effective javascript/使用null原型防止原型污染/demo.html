@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function C() {}
+	var o = new C();
+	// var x = Object.create(null);
+	C.prototype = null;
+	console.log(Object.getPrototypeOf(o) == null);
+</script>	
+</body>
+</html>

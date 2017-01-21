@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Parent(name) {
+			this.name = name;
+		}
+		Parent.prototype = {
+			age: 22,
+			sayName: function() {
+				return this.name;
+			}
+		}
+
+		function Child(name) {
+			Parent.call(this,name);
+		}
+
+		var ins = new Child("mo");
+		console.log(ins.age);
+		// console.log(ins.age,ins.sayName());
+	</script>
+</body>
+</html>

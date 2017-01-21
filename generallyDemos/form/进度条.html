@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>进度条</title> 
+</head>
+<body>
+	<form action="demo-form.php">
+		<label for="">请选择一个数值：</label>
+	    <input id="rangel" type="range" min="0" max="100" step="5" value="10" onchange="value_change()" />
+	    <output id="output">10</output>
+	</form>
+	<script type="text/javascript">
+		var oRangel = document.getElementById('rangel'),
+			oOutput = document.getElementById('output');
+
+		function value_change() {
+			output.value =  oRangel.value;
+		}
+	</script>
+</body>
+</html>

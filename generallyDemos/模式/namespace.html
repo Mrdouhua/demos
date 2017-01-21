@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 全局变量
+		var MY = MY || {};
+
+		// 定义通用的命名空间函数
+		MY.namespace = function (ns_string) {
+			var parts = ns_string.split('.'),
+				parent = MY,
+				i;
+			// 剥离最前面的冗余全局变量
+			if (parts[0] === "MY") {
+				parts = parts.slice(1);
+			}
+
+			for (var i = 0; i < parts.length; i++) {
+				// 如果它不存在，就创建一个属性
+				if (typeof parent[parts[i]] === "undefined") {
+					parent[parts[i]] = {};
+				}
+				parent = parent[parts[i]];
+			}
+			return parent;
+		};
+
+		// 将返回值赋给一个局部变量
+		var module2 = MY.namespace('MY.modules.modules2');
+
+		// 忽略最前面的"MY"
+		MY.namespace('modules.modules51');
+
+		// 长命名空间
+		MY.namespace('first.second.third.fourth.fifth');
+		// 可以在firebug的DOM中观察该例子中命名空间的样式
+
+		var mo = MY.namespace('MY.modules.modules2');
+		mo = "mo";
+		console.log(MY,mo);
+	</script>
+</body>
+</html>

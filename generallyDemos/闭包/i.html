@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// var arr = [];
+		function a(){
+			var arr = [];
+			for(let i = 0;i < 5;i++){
+				arr[i] = function(){
+					return i;
+				};
+			}
+			return arr;
+		}
+		var b = a();
+		console.log(b[0](),"ddd");
+	</script>
+</body>
+</html>
+[0,1,2,3,4]

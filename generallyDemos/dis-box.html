@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.flexbox {
+			/*display: -moz-box;
+			display: -ms-box;
+			display: -webkit-box;
+			display: -o-box;
+			display: box;*/
+		    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+		    display: -moz-box; /* Firefox 17- */
+		    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+		    display: -moz-flex; /* Firefox 18+ */
+		    display: -ms-flexbox; /* IE 10 */
+		    display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+			width: 600px;
+			border: 1px solid #111;
+			margin: 100px auto;
+			/*margin: auto 100px;*/
+			background-color: orange;
+		}
+		.flex {
+			width: 200px;
+			height: 200px;
+			/*background-color: #fff;*/
+			margin-right: 10px;
+		}
+		.flex1 {
+			background-color: #444;
+		}
+		.flex2 {
+			background-color: #777;
+		}
+		.flex3 {
+			background-color: #999;
+		}
+	</style>
+</head>
+<body>
+	<div class="flexbox">
+		<div class="flex flex1">1</div>
+		<div class="flex flex2">2</div>
+		<div class="flex flex3">3</div>
+	</div>
+</body>
+</html>

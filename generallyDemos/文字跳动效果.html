@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>梦柯教育-梦可官网文字跳动-Vico老师 </title>
+		<style type="text/css">
+			#txtDom{ padding: 50px; width:500px; margin: 0 auto; font-size: 16px; font-family: "微软雅黑";
+			line-height: 1.3em; text-indent: 2em;}
+		</style>
+	</head>
+	<body>
+	
+	<!--
+	今天的知识点： 定位
+		fiexd  悬浮定位     相对于浏览器
+		absolute 绝对定位   相对于 有定位(position)的父元素 / 如果没有找到带定位的父元素，那么就相对于浏览器定位
+		relative 相对定位   相对于自身的位置，去改变 
+	-->
+	
+	<div id="txtDom">
+		一个人想改变自己的命运，心态就显得尤为重要，别太在意自己做一些不愿意做的事。 
+		人生不如意之事十之八九。所以总是失意的时间长，得意的时间短。而且有时候受点 
+		苦难是为了以后更大的收获，所以要学会转变心态，千万别一直在报怨自己怎么活的 
+		这么累，干得这么辛苦;这样只会让自己陷入恶性循环当中，因为心理上的痛苦无形中
+		 会加剧工作生活的劳累，所以会越来越不快乐。加群学习交流：539400920
+	</div>
+	
+	<script type="text/javascript">
+		
+			
+		var txtAnim = {
+			len:0,
+			txtDom:"",
+			arrTxt:[],
+			init:function(obj){
+				this.obj = obj;
+				this.txtDom = obj.innerHTML.replace(/\s+/g,""); 
+				this.len = this.txtDom.length;
+				obj.innerHTML = "";
+				this.addDom();
+			},
+			addDom:function(){
+				for(var i=0;i<this.len;i++){
+					var spanDom = document.createElement("span");
+					spanDom.innerHTML = this.txtDom.substring(i,i+1);
+					this.obj.appendChild(spanDom);
+					this.arrTxt.push(spanDom);
+				};
+				for(var j=0;j<this.len;j++){
+					this.arrTxt[j].style.position = "relative";
+				};
+				this.strat();
+			},
+			strat:function(){
+				for(var i=0;i<this.len;i++){
+					this.arrTxt[i].onmouseover = function(){
+						this.stop = 0;
+						this.speed = -1;
+						var $this = this;
+						this.timer = setInterval(function(){
+							
+							$this.stop += $this.speed;//0  += -1
+							if($this.stop <= -20){
+								$this.speed = 1;
+							}
+							
+							$this.style.top = $this.stop + "px";
+							
+							if($this.stop >= 0){
+								clearInterval($this.timer)
+								$this.style.top = 0 + "px";
+							};
+						},15);
+					};
+				}
+			}
+		}
+		
+		var txtDom  = document.getElementById("txtDom");	
+		txtAnim.init(txtDom);
+		/*
+		    1： 如何让字符串变成  一个个的字体，让我们去控制
+		    
+	    	1获取字符串内容
+	    	2清空字符串内容
+	    	3遍历字符串， 然后一个个的切割出来。
+	    	4给切割出来的文字添加定位   
+	    	5把添加好定位的文字，重新赋值到获取的 元素里面。
+		    
+		    
+		 	2：鼠标滑动上去之后， 该怎么去实现 文字的跳动
+		 	   
+		 	1  定义一个变量0  		 	  
+		 	2 定义  定时器  		 	   
+		 	3让变量不断的 减少 		 	  
+		 	4改变元素的top  ==   变量		 	  
+		 	5当 变量 达到一定高度的时候，让变量不断的 增加		 	  
+		 	6 当变量  减少到0（本身位置） 的时候，		 	 
+		 	7清除动画  改变元素的top = 0（本身位置）
+		 
+		 */
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

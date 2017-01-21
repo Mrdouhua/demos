@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.cc {
+		border: 1px solid red;
+		background-color: #777;
+		width: 300px;
+		height: 200px;
+		position: relative;
+		top:5px;
+	}
+	.cc::before {
+		content: "";
+		position: absolute;
+		top: -.4em;left:1em;
+		padding: .35em;
+		background: inherit;
+		border: inherit;
+		border-right: 0;
+		border-bottom: 0;
+		transform: rotate(45deg); 
+	}
+	</style>
+</head>
+<body>
+	<input type="text" placeholder="dfdd">
+	<div class="cc">dfdfdfd</div>
+	
+</body>
+</html>

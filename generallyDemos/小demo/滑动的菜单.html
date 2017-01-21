@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性菜单</title>
+	<style type="text/css">
+	html,body,ul,li {
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		list-style-type: none;
+
+	}
+	#ul1 {
+		width: 400px;
+		height: 30px;
+		position: relative;
+		margin: 100px auto 0;
+	}
+	#ul1 li {
+		float: left;
+		width: 98px;
+		height: : 28px;
+		line-height: 28px;
+		border: 1px solid #ccc;
+		text-align: center;
+		z-index: 2;
+		position: relative;
+		cursor: pointer;
+
+	}
+	.bg {
+		width: 100px;
+		height: 5px;
+		overflow: hidden;
+		background-color: red;
+		border: none;
+		position: relative;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var oUl = document.getElementById('ul1');
+		var oLi = document.getElementsByTagName('li');
+		var oBg = oLi[oLi.length-1];
+		var i =0;
+		for(i=0;i<oLi.length-1;i++){
+			oLi[i].onmouseover = function(){
+				startMove(oBg,this.offsetLeft);
+			};
+		}
+	};
+		var iSpeed = 0;
+		var left = 0;
+		function startMove(obj,iTarget){
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function(){
+				iSpeed += (iTarget-obj.offsetLeft)/5;
+				iSpeed*=0.7;
+				left += iSpeed;
+				if(Math.abs(iSpeed)<1 && Math.abs(left-iTarget)<1){
+					clearInterval(obj.timer);
+					obj.style.left=iTarget+'px';
+				} else
+				{
+					obj.style.left = left+'px';
+				}
+				
+			},30)
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li>首页</li>
+		<li>关于我们</li>
+		<li>产品</li>
+		<li>联系方式</li>
+		<li class="bg"></li>
+	</ul>
+</body>
+</html>
