@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,html {
+			margin: 0;
+			padding: 0;
+		}
+		header,main,footer {
+			width: 100%;
+			/*min-width: 960px;*/
+		}
+		header {
+			height: 50px;
+			color: white;
+			background-color: orange;
+		}
+		main {
+			min-height: calc(100vh-50px-200px);
+			color: blue;
+			height: 1000px;
+			background-color: green;
+			box-sizing: border-box;
+		}
+		footer {
+			height: 200px;
+			color: #111;
+			background-color: red;
+		}
+		.div1,.div2,.div3 {
+			width: 60%;
+			min-width: 500px;
+			height: inherit;
+			margin: 0 auto;
+			flex: 2;
+			background-color: #444;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="div1"></div>
+	</header>
+	<main>
+		<div class="div2">dsfddsfds</div>
+	</main>
+	<footer>
+		<div class="div3"></div>
+	</footer>
+</body>
+</html>
