@@ -1,0 +1,44 @@
+body {
+	padding: 0;
+	margin: 0;	
+	height: 100%;			
+}
+ul,li {
+	list-style: none;
+	padding: 0;
+	margin:0;			
+}	
+.wrap,.leftside,.center,.rightside {
+	padding: 20px;
+	box-sizing:border-box;
+	border: 1px solid #999;	
+	background-color: #fff;		
+}	
+img {
+	width: 80px;
+	height: 80px;
+	border: 1px solid #999;
+}
+.wrap {
+	min-width: 460px;
+	background-color: #eee;			
+}
+.leftside {
+	float: left;
+	width: 200px;
+}
+.leftside p {
+	float: right;
+	text-align: center;
+	color: #72dd6b;			
+}	
+.rightside {
+	float: right;
+	width: 120px;
+}
+.center {
+	margin: 0 140px 20px 220px
+}
+.clearfix {
+	clear: both;			
+}
