@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,html {
+			padding: 0;
+			margin: 0;
+		}
+		.div1 {
+			width: 400px;
+			height: 400px;
+			background: rgba(0,0,0,.5);
+			position: relative;
+		}
+		.div2 {
+			width: 100px;
+			height: 100px;
+			background: rgba(300,100,100,.6);
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		.div3 {
+			width: 100px;
+			height: 100px;
+			background: rgba(200,100,100,.6);
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.myDiv1 {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			background: rgba(150,100,100,.5);
+		}
+		.myDiv2 {
+			width: 50px;
+			height: 50px;
+			background: rgba(50,50,50,.5);
+			float: right;
+			position: relative;
+			top: 50px;
+		}
+		.myDiv3 {
+			width: 50px;
+			height: 50px;
+			background: rgba(0,50,50,.5);
+			float: right;
+			/*top: 100px;*/
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1">
+		<div class="div2">2</div>
+		<div class="div3">3</div>
+	</div>
+	<div class="myDiv1">
+		<div class="myDiv2">2</div>
+		<div class="myDiv3">3</div>
+	</div>
+</body>
+</html>

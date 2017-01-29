@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script> 
+		<!--[if lt IE9]> 
+	   (function() {
+	     if (!
+	     /*@cc_on!@*/
+	     0) return;
+	     var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');
+	     var i= e.length;
+	     while (i--){
+	         document.createElement(e[i])
+	     } 
+		})()
+		<![endif]-->
+	</script>
+	
+	<style>
+		body,html {
+			padding: 0;
+			margin: 0;
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		/*body {
+			display: flex;
+			flex-flow: column;
+			min-height: 100vh;
+		}*/
+		header {
+			width: 100%;
+			height: 30px;
+			background-color: #dd7e6b;
+		}
+		a {
+			text-decoration: none;
+		}
+		ul.nav {
+			width: 374px;
+			height: 30px;
+			background-color: orange;
+			list-style-type: none;
+			padding: 0;
+			margin: 0 auto;
+		}
+		ul.nav>li {
+			float: left;
+			height: 30px;
+			display: inline-block;
+		}
+		ul.nav>li>a {
+			display: block;
+			padding: 0 15px 0 15px;
+			box-sizing: border-box;
+			text-align: center;
+			line-height: 30px;
+			cursor: pointer;
+		} 
+		/*.content {
+			width: 100%;
+			background: rgba(125,37,37,.6);
+			flex: 1;
+		}*/
+		 .content {
+			width: 100%;
+			min-height: calc(100vh-30px-50px);
+			background: #7d2525;
+			filter: alpha(opacity=50);
+			opacity: 0.5;
+			box-sizing: border-box;
+		} 
+		.cc {
+			width: 100%;
+			height: 700px;
+		} 
+		footer {
+			width: 100%;
+			height: 50px;
+			background-color: blue;
+		}
+		header,nav,article,section,aside,footer{display:block;}
+		@media screen and (max-width: 900px) {
+			/* body,html {
+			padding: 0;
+			margin: 0;
+			font-size: 14px;
+			font-family: "微软雅黑";
+			}
+			body {
+				display: flex;
+				flex-flow: column;
+				min-height: 100vh;
+			}
+			header {
+				width: 100%;
+				height: 30px;
+				background: rgba(148,121,121,.8);
+			}
+			a {
+				text-decoration: none;
+			} */
+			ul.nav {
+				width: 374px;
+				height: 30px;
+				background-color: orange;
+				list-style-type: none;
+				padding: 0;
+				margin: 0 0 0 150px;
+			}
+			ul.nav>li {
+				float: left;
+				height: 30px;
+				display: inline-block;
+			}
+			ul.nav>li>a {
+				display: block;
+				padding: 0 15px 0 15px;
+				box-sizing: border-box;
+				text-align: center;
+				line-height: 30px;
+				cursor: pointer;
+			} 
+			.content {
+				width: 100%;
+				background: rgba(125,37,37,.6);
+				flex: 1;
+			} 
+			footer {
+				width: 100%;
+				height: 50px;
+				background: blue;
+			}
+			header,nav,article,section,aside,footer{display:block;}
+		}
+	</style>
+		
+</head>
+<body>
+	<header>
+		<ul class="nav">
+			<li><a href="#">首页</a></li>
+			<li><a href="#">产品</a></li>
+			<li><a href="#">人员</a></li>
+			<li><a href="#">联系方式</a></li>
+			<li><a href="#">假如我们</a></li>
+		</ul>
+	</header>
+	<div class="content">
+		<div class="cc"></div>
+	</div>
+	<footer></footer>
+</body>
+</html>
