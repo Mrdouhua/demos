@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>百度搜索提示框</title>
+<style>
+* { margin: 0;padding: 0; outline: none;}
+.search101 {
+    width: 650px;
+    margin: 300px auto;
+    font-size: 0;
+} 
+.sou1 { 
+    width: 514px;
+    height: 40px;
+    color: #666;
+    font: 16px Microsoft YaHei;
+    border: 1px solid rgba(170,170,170,.9);
+    border-right: 0;
+    border-radius: 2px 0 0 2px;
+    background: rgba(255,255,255,.9);
+    padding: 0 30px 0 3px;  
+    vertical-align: top; 
+    display: inline-block;
+    transition: .2s;   
+}
+.sou2 { 
+    width: 100px;
+    height: 42px;
+    font: 16px Microsoft YaHei;
+    color: rgba(255,255,255,.9); 
+    background: rgba(0,170,240,1);
+    border: 0;
+    border-left: 1px solid rgba(0,170,240,1);
+    border-radius: 0 2px 2px 0;
+    margin: 0 0 0 -1px;
+    vertical-align: top;
+    transition: .3s;
+    display: inline-block;
+    cursor: pointer;
+}
+.sou2:hover {
+    background: rgba(0,140,220,.9);
+}
+.sou1:focus {
+    color: #333; 
+    border: 1px solid rgba(0,170,240,1);
+    border-right: none;
+}
+</style>
+</head>
+
+<body>
+    <div class="search101">
+        <form action="http://www.baidu.com/baidu" class="search-form" method="" id="search-form">
+            <input id="ipt1" name="tn" type="hidden" value="baidu" >
+            <input type="text" id="sou1" class="sou1" name="word" maxlength="8048" value="" placeholder="">
+            <input type="submit" class="sou2" value="百度一下" >
+        </form>
+    </div>
+
+
+
+<!-- 百度搜索提示 -->
+<script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script> <!-- we124.com/libs/js/opensug.js(无logo) -->
+<script> 
+    document.getElementById("sou1").focus();  
+    var txtObj = document.getElementById("alertSpan");
+
+    //回调函数，用于获取用户当前选择的文字
+    function show(str){
+        txtObj.innerHTML = str;
+    }
+    var params = {
+        "XOffset": 0,                   //提示框位置横向偏移量,单位px
+        "YOffset": 0,                   //提示框位置纵向偏移量,单位px
+        "width": 204,                   //提示框宽度，单位px
+        "fontColor": "#666",            //提示框文字颜色
+        "fontColorHI": "#222",          //提示框高亮选择时文字颜色
+        "fontSize": "16px",             //文字大小
+        "fontFamily": "微软雅黑",       //文字字体
+        "borderColor": "#d8d8d8",       //提示框的边框颜色
+        "bgcolorHI": "#e8e8e8",         //提示框高亮选择的颜色
+        "sugSubmit": true,              //在选择提示词条是是否提交表单 
+    };
+    BaiduSuggestion.bind("ipt1",params,show); 
+</script>      
+</body>
+</html> 
